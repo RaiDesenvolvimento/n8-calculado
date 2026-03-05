@@ -1,0 +1,33 @@
+name: FRONT-DEPLOY
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  front-deploy:
+    runs-on: [self-hosted, Linux, x64]
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      # Faz checkout do código
+      - uses: actions/checkout@v3
+
+      # Configura o Node.js
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # Instala dependências
+      - name: install yarn
+        run: npm i -g yarn
+
+      - name: yarn install
+        run: yarn install
+
+      # Roda o front em modo desenvolvimento
+      - name: start front
+        run: npm run dev
