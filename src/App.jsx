@@ -648,8 +648,6 @@ function AdminModal({ emps, onSave, onClose }) {
   );
 }
 
-// ─── BUYER FORM MODAL ────────────────────────────────────────────────────────
-
 const CIVIL = ["Solteiro(a)","Casado(a)","Divorciado(a)","Viúvo(a)","União Estável"];
 
 function BuyerFormModal({ onConfirm, onClose }) {
@@ -755,7 +753,6 @@ function BuyerFormModal({ onConfirm, onClose }) {
   );
 }
 
-// ─── STEP 1: EMPREENDIMENTO ───────────────────────────────────────────────────
 
 function StepEmp({ emps, empId, setEmpId, onNext }) {
   return (
@@ -792,7 +789,6 @@ function StepEmp({ emps, empId, setEmpId, onNext }) {
   );
 }
 
-// ─── STEP 2: UNIDADES ─────────────────────────────────────────────────────────
 
 function StepUnidade({ emp, selectedIds, setSelectedIds, onNext, onBack }) {
   const [filtro,   setFiltro]   = useState("");
@@ -899,7 +895,6 @@ function StepUnidade({ emp, selectedIds, setSelectedIds, onNext, onBack }) {
   );
 }
 
-// ─── STEP 3: SIMULADOR ────────────────────────────────────────────────────────
 
 const FIELD_KEYS = ["sinal","financ","parcel","baloes","permuta"];
 const FIELD_META = [
