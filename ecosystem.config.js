@@ -1,9 +1,11 @@
 module.exports = {
-    app: [
-        {
-            name: 'Calculator',
-            script: 'npm run dev',
-            exec_mode: 'fork',
-        }
-    ]
+  apps: [
+    {
+      name: 'Calculator',
+      script: 'npm',
+      args: 'run dev',
+      interpreter: 'none',
+      exec_mode: 'fork'
+    }
+  ]
 }
